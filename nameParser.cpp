@@ -8,12 +8,16 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <sstream>
+#include <vector>
 
 using std::cout;
 using std::endl;
 using std::string;
 using std::fstream;
 using std::ios;
+using std::vector;
+using std::stringstream;
 
 
 void parseNames(const string& fileName)
@@ -31,7 +35,25 @@ void parseNames(const string& fileName)
 
     while (getline(inputFile, fullName))
     {
-        cout << fullName << endl;
+        stringstream stringObj(fullName);
+        string namePart;
+        vector<string> vecName;
+
+        while(stringObj >> namePart)
+        {
+            vecName.push_back(namePart);
+        }
+
+        cout << vecName.back() << ", ";
+
+        for (int i = 0; i < vecName.size() - 1; ++i) 
+        {
+            cout << vecName[i] << " ";
+        }
+
+        cout << endl;
     }
+
+    inputFile.close();
 }
 
