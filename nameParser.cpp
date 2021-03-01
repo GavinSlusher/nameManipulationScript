@@ -19,6 +19,28 @@ using std::ios;
 using std::vector;
 using std::stringstream;
 
+void storeNames(std::string& fullName, std::vector<string>& vecName)
+{
+    stringstream stringObj(fullName);
+    string namePart;
+        
+    while(stringObj >> namePart)
+    {
+        vecName.push_back(namePart);
+    }
+}
+
+void displaySurnameFirst(std::vector<std::string>& vecName)
+{
+    cout << vecName.back() << ", ";
+
+    for (int i = 0; i < vecName.size() - 1; ++i) 
+    {
+        cout << vecName[i] << " ";
+    }
+
+    cout << endl;
+}
 
 void parseNames(const string& fileName)
 {
@@ -35,23 +57,11 @@ void parseNames(const string& fileName)
 
     while (getline(inputFile, fullName))
     {
-        stringstream stringObj(fullName);
-        string namePart;
         vector<string> vecName;
 
-        while(stringObj >> namePart)
-        {
-            vecName.push_back(namePart);
-        }
+        storeNames(fullName, vecName);
 
-        cout << vecName.back() << ", ";
-
-        for (int i = 0; i < vecName.size() - 1; ++i) 
-        {
-            cout << vecName[i] << " ";
-        }
-
-        cout << endl;
+        displaySurnameFirst(vecName);
     }
 
     inputFile.close();
