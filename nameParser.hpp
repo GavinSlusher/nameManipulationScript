@@ -5,9 +5,9 @@
 * Created:          02/28/21 
 * Description:      Specification file for Name Manipulation Scripts
 *****************************************************************************/
-#ifndef NAMEPARSER
-#define NAMEPARSER.H
+#ifndef NAMEPARSER_HPP
+#define NAMEPARSER_HPP 
 
 void parseNames(const std::string& fileName);
 
-#endif /* ifndef NAMEPARSER.H */
+#endif /* ifndef NAMEPARSER_HPP */
