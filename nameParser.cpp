@@ -7,12 +7,31 @@
 *****************************************************************************/
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using std::cout;
 using std::endl;
 using std::string;
+using std::fstream;
+using std::ios;
+
 
 void parseNames(const string& fileName)
 {
-    cout << "parseNames was called" << endl;
+    fstream inputFile;
+
+    inputFile.open(fileName, ios::in);
+    
+    if (inputFile.fail())
+    {
+        cout << "Cannot access file." << endl;
+    }
+
+    string fullName;
+
+    while (getline(inputFile, fullName))
+    {
+        cout << fullName << endl;
+    }
 }
+
