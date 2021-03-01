@@ -6,6 +6,7 @@
 * Description:      Main file for the names exercise
 *****************************************************************************/
 #include <iostream>
+#include "nameParser.hpp"
 
 using std::cout;
 using std::endl;
@@ -19,7 +20,7 @@ int main(int argc, const char** argv)
         return -1;
     }
 
-    cout << "hello world" << endl;
+    parseNames(argv[1]);
 
     return 0;
 }
