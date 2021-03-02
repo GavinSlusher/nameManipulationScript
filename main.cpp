@@ -3,7 +3,7 @@
 *
 * Author:           Gavin Slusher  
 * Created:          02/28/21 
-* Description:      Main file for the names exercise
+* Description:      Main file for the nameParser
 *****************************************************************************/
 #include <iostream>
 #include "nameParser.hpp"
